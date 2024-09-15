@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Sport & Fitness Research</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding-top: 70px;
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Sport & Fitness Research</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="mentorship.html">Mentorship</a></li>
+                <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Submit a Resource Section -->
+    <div class="container mt-5">
+        <h2 class="text-center">Submit a Resource</h2>
+        <p class="text-center">Share useful content with your peers by submitting resources here. All submissions will be reviewed before publication.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Submit a Resource Form -->
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="resourceTitle">Resource Title:</label>
+                        <input type="text" class="form-control" id="resourceTitle" name="resourceTitle" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceCategories">Categories (Select one or more):</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="resourceCategories[]" id="exerciseTechniques" value="Exercise Techniques">
+                            <label class="form-check-label" for="exerciseTechniques">Exercise Techniques</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="resourceCategories[]" id="sportsCoaching" value="Sports Coaching">
+                            <label class="form-check-label" for="sportsCoaching">Sports Coaching</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="resourceCategories[]" id="injuryPrevention" value="Injury Prevention">
+                            <label class="form-check-label" for="injuryPrevention">Injury Prevention</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="resourceCategories[]" id="fitnessAssessments" value="Fitness Assessments">
+                            <label class="form-check-label" for="fitnessAssessments">Fitness Assessments</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceType">Type of Resource:</label>
+                        <select class="form-control" id="resourceType" name="resourceType" required>
+                            <option value="Article Link">Article Link</option>
+                            <option value="Video Link">Video Link</option>
+                            <option value="Downloadable File">Downloadable File</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceContent">Resource Link or Description:</label>
+                        <input type="text" class="form-control" id="resourceContent" name="resourceContent" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="resourceFile">Upload File (if applicable):</label>
+                        <input type="file" class="form-control-file" id="resourceFile" name="resourceFile">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Submit Resource</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display Submitted Resources -->
+    <div class="container mt-5">
+        <h2 class="text-center">Approved Resources</h2>
+
+        <!-- Search Bar for Filtering Resources -->
+        <form class="form-inline justify-content-center mb-3" method="GET" action="#">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search resources..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+        <!-- Resource Table -->
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Title</th>
+                    <th>Categories</th>
+                    <th>Type</th>
+                    <th>Submission Date</th>
+                    <th>Likes</th> <!-- Add this column -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Static Example Row -->
+                <tr>
+                    <td>Sample Resource Title</td>
+                    <td>Exercise Techniques</td>
+                    <td><a href="#" class="btn btn-primary" target="_blank">View Resource</a></td>
+                    <td>2024-09-15</td>
+                    <td>10</td>
+                    <td><button class="btn btn-sm btn-success">Like</button></td>
+                </tr>
+                <!-- Add more static rows as needed -->
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <!-- Static Pagination Links -->
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; 2024 Sport & Fitness Research. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to handle like button click -->
+    <script>
+        function likeResource(resourceId) {
+            alert('Like feature is disabled in static version.');
+        }
+    </script>
+
+</body>
+
+</html>

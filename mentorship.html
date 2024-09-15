@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Program - Sport & Fitness Research</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Sport & Fitness Research</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
+                <li class="nav-item"><a class="nav-link" href="mentorship.html">Mentorship</a></li>
+                <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <div class="text-center my-5">
+        <h1>Mentorship Program</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <!-- Placeholder video -->
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <p class="mt-3">Our mentorship program connects students with experienced mentors to guide them in their fitness
+            and sports coaching journey.<br>Whether you're seeking advice or looking to offer your expertise, this program
+            helps foster growth and success.</p>
+    </div>
+
+    <!-- Mentor Profiles Section -->
+    <div class="container my-5">
+        <h2>Meet Our Mentors</h2>
+        <div class="row">
+            <!-- Mentor Profile 1 -->
+            <div class="col-md-3 mentor-card" data-expertise="Sports Coaching">
+                <div class="card">
+                    <img class="card-img-top" src="mentor1.jpg" alt="Mentor 1">
+                    <div class="card-body">
+                        <h5 class="card-title">John Doe</h5>
+                        <p class="card-text">Specialist in Sports Coaching with 10 years of experience.</p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#mentorRequestModal1">Request Mentorship</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mentor Request Modal 1 -->
+            <div class="modal fade" id="mentorRequestModal1" tabindex="-1" role="dialog"
+                aria-labelledby="mentorRequestModalLabel1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="mentorRequestModalLabel1">Request Mentorship - John Doe</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- Non-functional form -->
+                        <form action="#">
+                            <div class="modal-body">
+                                <input type="hidden" name="mentor_name" value="John Doe">
+                                <div class="form-group">
+                                    <label for="studentName1">Your Name:</label>
+                                    <input type="text" class="form-control" id="studentName1" name="studentName"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="studentEmail1">Your Email:</label>
+                                    <input type="email" class="form-control" id="studentEmail1" name="studentEmail"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mentorshipNeeds1">What do you need help with?</label>
+                                    <textarea class="form-control" id="mentorshipNeeds1" name="mentorshipNeeds" rows="4"
+                                        required></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Send Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Repeat for other mentors... -->
+
+        </div>
+    </div>
+
+    <!-- General Mentorship Request Form -->
+    <div class="container my-5">
+        <h2>Request a Mentor (General Help)</h2>
+
+        <!-- Dropdown to Filter Mentors by Area of Expertise -->
+        <div class="my-3">
+            <label for="mentorFilter">Filter by Area of Expertise:</label>
+            <select class="form-control" id="mentorFilter" onchange="filterMentors()">
+                <option value="all">Show All</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Sports Coaching">Sports Coaching</option>
+                <option value="Strength and Conditioning">Strength and Conditioning</option>
+                <option value="Nutrition and Wellness">Nutrition and Wellness</option>
+                <option value="Sports Psychology">Sports Psychology</option>
+                <option value="Injury Prevention">Injury Prevention</option>
+            </select>
+        </div>
+
+        <form action="#">
+            <div class="form-group">
+                <label for="studentName">Your Name:</label>
+                <input type="text" class="form-control" id="studentName" name="studentName" required>
+            </div>
+            <div class="form-group">
+                <label for="studentEmail">Your Email:</label>
+                <input type="email" class="form-control" id="studentEmail" name="studentEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="mentorshipNeeds">What do you need help with?</label>
+                <textarea class="form-control" id="mentorshipNeeds" name="mentorshipNeeds" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit Request</button>
+        </form>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p>&copy; 2024 Sport & Fitness Research. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Dropdown Filters -->
+    <script>
+        function filterMentors() {
+            var selectedExpertise = document.getElementById("mentorFilter").value;
+            var mentorCards = document.getElementsByClassName("mentor-card");
+
+            for (var i = 0; i < mentorCards.length; i++) {
+                var expertise = mentorCards[i].getAttribute("data-expertise");
+
+                if (selectedExpertise === "all" || expertise === selectedExpertise) {
+                    mentorCards[i].style.display = "block";
+                } else {
+                    mentorCards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
